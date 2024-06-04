@@ -15,6 +15,7 @@ from model import ModelConfig, RNN, loss_fn
 from data_loader import CharDataset, create_datasets, InfiniteDataLoader
 
 # -----------------------------------------------------------------------------
+# helper functions for sampling and evaluation
 @torch.inference_mode()
 def evaluate(model, dataset, batch_size=50, max_batches=None):
     model.eval()
