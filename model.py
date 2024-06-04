@@ -100,8 +100,9 @@ class RNN(nn.Module):
         # decode the outputs
         hidden = torch.stack(hiddens, 1) # (b, t, n_embd2)
         logits = self.lm_head(hidden)
-
+        
         return logits 
+
     
 def loss_fn(logits, targets):
     return F.cross_entropy(logits.view(-1, logits.size(-1)), 
