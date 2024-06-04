@@ -101,12 +101,9 @@ class RNN(nn.Module):
         hidden = torch.stack(hiddens, 1) # (b, t, n_embd2)
         logits = self.lm_head(hidden)
 
-        # if we are given some desired targets also calculate the loss
-        #loss = None
-        #if targets is not None:
-        #    loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1)
-
-        return logits #, loss
+        return logits 
     
 def loss_fn(logits, targets):
-    return F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1)
+    return F.cross_entropy(logits.view(-1, logits.size(-1)), 
+                           targets.view(-1), 
+                           ignore_index=-1)

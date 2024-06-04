@@ -1,5 +1,5 @@
 PYTHON=python3 
-SCRIPT=makemore.py
+SCRIPT=train.py
 
 MAKEMORE=$PYTHON
 MAKEMORE+=" "
